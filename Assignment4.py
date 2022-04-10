@@ -40,10 +40,11 @@ def returnBook(username,Bookname):
         print("you havent issued any book yet")    
 
 
-def addBook(username,Bookname,passw):
+def addBook(username,passw):
     _passward="ayush65"
     if(_passward==passw):
         print(f"welcome {username} which book you want to add")
+        Bookname=input("enter bookname:")
         books.append(Bookname)
         print("book added")
     else:
@@ -74,7 +75,7 @@ while(True):
 
     if(not users.get(id)):
        print("you havent gegestired to our library")
-       agree=int(input("enter 1 for register and 0 for exit"))
+       agree=int(input("enter 1 for register and 0 for exit: "))
        if(agree==1):
            users[id]=username
        else:
@@ -94,8 +95,8 @@ while(True):
         returnBook(username,Bookname)
     elif(choice==4):
         passwd=(input("enter passwrd:"))
-        Bookname=input("enter bookname:")
-        addBook(username,Bookname,passwd)    
+        
+        addBook(username,passwd)    
     elif(choice==5):
         print("Thankyou for visiting our library")   
         break   
